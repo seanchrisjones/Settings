@@ -6,22 +6,26 @@
 //  Copyright © 2020 Sean Jones. All rights reserved.
 //
 
-import Foundation
+
+import UIKit
 
 class SettingController{
     
     // MARK: SOURCE OF TRUTH
     let settings: [Setting] = {
-        let music = Setting(settingTitle: "music", icon:, isOn: false)
+        let music = Setting (settingTitle: "Music", icon: UIImage(named:"music")!, isOn: false)
+        let apps = Setting (settingTitle: "App Store", icon: UIImage(named: "apps")!, isOn: false)
+        let books = Setting (settingTitle: "Book", icon: UIImage(named: "books")!, isOn: false)
         
-        return []
-    }
+        return [music, apps, books]
+    }()
     
     //MARK: METHODS
     
     func toggleIsON(for setting: Setting){
+        setting.isOn = !setting.isOn
         
         
     }
 }
-2
+
